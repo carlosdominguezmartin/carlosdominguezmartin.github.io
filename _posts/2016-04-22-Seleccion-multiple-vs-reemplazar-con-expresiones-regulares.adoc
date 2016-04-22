@@ -51,7 +51,7 @@ En el segundo recuadro introducimos el valor por el que queremos reemplazar:
 
 Una vez rellenos ambos campos, si existe coincidencia, se nos previsualizará la modificación en el editor y las líneas que cumplen la expresión regular:
 
-image::001_03.png[]
+image::001_04.gif[]
 
 Ahora basta con pulsar sobre Replace all y la sustitución será inmediata.
 
