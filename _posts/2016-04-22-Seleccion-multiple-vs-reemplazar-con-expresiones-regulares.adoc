@@ -1,1 +1,36 @@
-= prueba
+= Selección múltiple vs reemplazar con expresiones regulares
+:hp-tags: android studio, selección múltilpe, regex
+
+Hace poco me encontré con la necesidad de editar cientos de filas simultaneamente. Para que os hagáis una idea exacta de la situación, en el proyecto en que estaba trabajando teníamos un script de actualización de la base de datos en que el insertábamos una serie de tuplas en la base de datos.
+
+.Situación sencilla
+ insert into tabla_de_prueba (texto1, texto2, texto3) values ("valor1", "valor2", "valor3")
+ insert into tabla_de_prueba (texto1, texto2, texto3) values ("valor1", "valor2", "valor3")
+ insert into tabla_de_prueba (texto1, texto2, texto3) values ("valor1", "valor2", "valor3")
+ ...
+ insert into tabla_de_prueba (texto1, texto2, texto3) values ("valor1", "valor2", "valor3")
+
+Para muchos casos y situaciones sencillas lo más cómodo es utilizar la selección múltiple de Android Studio.
+
+Imaginemos que queremos cambiar el nómbre de la columna "texto2" por "numero2" y al valor insertado quitarle las dobles comillas.
+
+Si quisiésemos hacerlo con selección múltiple bastaría con seleccionar cualquiera de las apariciones de "insert into tabla_de_prueba " y pulsar la combinación de teclas Ctrl+Alt+Shift+J (Edit -> Find -> Select All Occurrences). Ahora podremos movernos por todas las inserciones usando los cursores y editar los valores de forma sencilla.
+
+image::001_01.gif[]
+
+La forma en que hemos realizado el cambio es muy sencilla, pero tiene sus inconventientes:
+
+* Si el número de elementos seleccionados es muy grande la edición será muy lenta.
+* Hay casos no muy complejos en los que esta forma de editar no se podrá usar.
+
+.Situacion compleja
+ insert into tabla_de_prueba (texto1, texto2, texto3) values ("valor1", "valor2", "valor3")
+ insert into tabla_de_prueba (texto1, texto2, texto3) values ("valor 2", "valor2", "valor3")
+ insert into tabla_de_prueba (texto1, texto2, texto3) values ("valor1", "valor2", "valor3")
+ ...
+ insert into tabla_de_prueba (texto1, texto2, texto3) values ("valor1", "valor2", "valor3")
+
+Solo hemos cambiado una de las cadenas almacenadas incluyendo un espacio en blanco, pero ya nos resultará más complicado movernos por las líneas para editarlas. Aún se puede conseguir sin mucha dificultad, pero no es difícil imaginar situaciones en las que sea imposible.
+
+Para los casos sencillos es útil conocer el primer método, pero si nos encontramos con situaciones más complejas es recomendable acudir al dialogo de reemplazar. Ctrl+R (Edit -> Find -> Replace...).
+
