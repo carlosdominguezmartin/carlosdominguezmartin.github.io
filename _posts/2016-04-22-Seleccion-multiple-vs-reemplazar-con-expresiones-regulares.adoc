@@ -42,7 +42,7 @@ En el recuadro de búsqueda vamos a introducir una expresión regular que nos ag
 
  (insert into tabla_de_prueba \(texto1, )(texto2)(, texto3\) values \("[^"]*", )(")([^"]*)(")([^\)]*\))
 
-TIP: Ni soy experto en expresiones regulares ni pretendo convertir esta entrada en una guía de expresiones regulares, pero para destacaré lo más importante de la expresión anterior, los paréntesis, que nos permite agrupar en bloques las distintas zonas de coincidencia para poder referenciarlas después con $n siendo n el número de bloque en la expresión.
+TIP: Ni soy experto en expresiones regulares ni pretendo convertir esta entrada en una guía de expresiones regulares, pero destacaré lo más importante de la expresión anterior, los paréntesis, que nos permite agrupar en bloques las distintas zonas de coincidencia para poder referenciarlas después con $n siendo n el número de bloque en la expresión.
 Por ejemplo, $1 sería "insert into tabla_de_prueba (texto1, ".
 
 En el segundo recuadro introducimos el valor por el que queremos reemplazar:
