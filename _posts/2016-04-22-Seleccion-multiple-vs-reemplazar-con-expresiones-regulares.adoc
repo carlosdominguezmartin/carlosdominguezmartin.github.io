@@ -1,7 +1,7 @@
 = Selección múltiple vs reemplazar con expresiones regulares
 :hp-tags: android studio, selección múltilpe, regex
 
-Hace poco me encontré con la necesidad de editar cientos de filas simultaneamente. Para que os hagáis una idea exacta de la situación, en el proyecto en que estaba trabajando teníamos un script de actualización de la base de datos en que el insertábamos una serie de tuplas en la base de datos.
+Hace poco me encontré con la necesidad de editar cientos de filas simultaneamente. Para que os hagáis una idea exacta de la situación, en el proyecto en que estaba trabajando teníamos un script de actualización de base de datos en que el insertábamos una serie de tuplas en la base de datos.
 
 .Situación sencilla
  insert into tabla_de_prueba (texto1, texto2, texto3) values ("valor1", "valor2", "valor3")
@@ -18,12 +18,12 @@ Si quisiésemos hacerlo con selección múltiple bastaría con seleccionar cualq
 
 image::001_01.gif[]
 
-La forma en que hemos realizado el cambio es muy sencilla, pero tiene sus inconventientes:
+La forma en que hemos realizado el cambio es muy sencilla, pero tiene sus inconvenientes:
 
 * Si el número de elementos seleccionados es muy grande la edición será muy lenta.
 * Hay casos no muy complejos en los que esta forma de editar no se podrá usar.
 
-.Situacion compleja
+.Situación compleja
  insert into tabla_de_prueba (texto1, texto2, texto3) values ("valor1", "valor2", "valor3")
  insert into tabla_de_prueba (texto1, texto2, texto3) values ("valor 2", "valor2", "valor3")
  insert into tabla_de_prueba (texto1, texto2, texto3) values ("valor1", "valor2", "valor3")
