@@ -77,17 +77,17 @@
     <meta property="og:site_name" content="AndroidDev" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Selección múltiple vs reemplazar con expresiones regulares" />
-    <meta property="og:description" content="Hace poco me encontré con la necesidad de editar cientos de filas simultaneamente. Para que os hagáis una idea exacta de la situación, en el proyecto en que estaba trabajando teníamos un script de actualización de la base de datos..." />
+    <meta property="og:description" content="Hace poco me encontré con la necesidad de editar cientos de filas simultaneamente. Para que os hagáis una idea exacta de la situación, en el proyecto en que estaba trabajando teníamos un script de actualización de base de datos en..." />
     <meta property="og:url" content="https://carlosdominguezmartin.github.io/2016/04/22/Seleccion-multiple-vs-reemplazar-con-expresiones-regulares.html" />
     <meta property="article:published_time" content="2016-04-21T22:00:00.000Z" />
-    <meta property="article:modified_time" content="2016-04-22T12:27:18.423Z" />
+    <meta property="article:modified_time" content="2016-04-22T12:29:49.068Z" />
     <meta property="article:tag" content="android studio" />
     <meta property="article:tag" content="selección múltilpe" />
     <meta property="article:tag" content="regex" />
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Selección múltiple vs reemplazar con expresiones regulares" />
-    <meta name="twitter:description" content="Hace poco me encontré con la necesidad de editar cientos de filas simultaneamente. Para que os hagáis una idea exacta de la situación, en el proyecto en que estaba trabajando teníamos un script de actualización de la base de datos..." />
+    <meta name="twitter:description" content="Hace poco me encontré con la necesidad de editar cientos de filas simultaneamente. Para que os hagáis una idea exacta de la situación, en el proyecto en que estaba trabajando teníamos un script de actualización de base de datos en..." />
     <meta name="twitter:url" content="https://carlosdominguezmartin.github.io/2016/04/22/Seleccion-multiple-vs-reemplazar-con-expresiones-regulares.html" />
     
     <script type="application/ld+json">
@@ -105,9 +105,9 @@
     "headline": "Selección múltiple vs reemplazar con expresiones regulares",
     "url": "https://carlosdominguezmartin.github.io/2016/04/22/Seleccion-multiple-vs-reemplazar-con-expresiones-regulares.html",
     "datePublished": "2016-04-21T22:00:00.000Z",
-    "dateModified": "2016-04-22T12:27:18.423Z",
+    "dateModified": "2016-04-22T12:29:49.068Z",
     "keywords": "android studio,  selección múltilpe,  regex",
-    "description": "Hace poco me encontré con la necesidad de editar cientos de filas simultaneamente. Para que os hagáis una idea exacta de la situación, en el proyecto en que estaba trabajando teníamos un script de actualización de la base de datos..."
+    "description": "Hace poco me encontré con la necesidad de editar cientos de filas simultaneamente. Para que os hagáis una idea exacta de la situación, en el proyecto en que estaba trabajando teníamos un script de actualización de base de datos en..."
 }
     </script>
 
@@ -195,7 +195,7 @@
           </aside>
           <div itemprop="articleBody" class="post-body">
             <div class="paragraph">
-<p>Hace poco me encontré con la necesidad de editar cientos de filas simultaneamente. Para que os hagáis una idea exacta de la situación, en el proyecto en que estaba trabajando teníamos un script de actualización de la base de datos en que el insertábamos una serie de tuplas en la base de datos.</p>
+<p>Hace poco me encontré con la necesidad de editar cientos de filas simultaneamente. Para que os hagáis una idea exacta de la situación, en el proyecto en que estaba trabajando teníamos un script de actualización de base de datos en que el insertábamos una serie de tuplas en la base de datos.</p>
 </div>
 <div class="literalblock">
 <div class="title">Situación sencilla</div>
@@ -222,7 +222,7 @@ insert into tabla_de_prueba (texto1, texto2, texto3) values ("valor1", "valor2",
 </div>
 </div>
 <div class="paragraph">
-<p>La forma en que hemos realizado el cambio es muy sencilla, pero tiene sus inconventientes:</p>
+<p>La forma en que hemos realizado el cambio es muy sencilla, pero tiene sus inconvenientes:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -235,7 +235,7 @@ insert into tabla_de_prueba (texto1, texto2, texto3) values ("valor1", "valor2",
 </ul>
 </div>
 <div class="literalblock">
-<div class="title">Situacion compleja</div>
+<div class="title">Situación compleja</div>
 <div class="content">
 <pre>insert into tabla_de_prueba (texto1, texto2, texto3) values ("valor1", "valor2", "valor3")
 insert into tabla_de_prueba (texto1, texto2, texto3) values ("valor 2", "valor2", "valor3")
