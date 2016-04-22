@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "carlosdominguezmartin",
-    "repositoryName": "carlosdominguezmartin.github.io",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"carlosdominguezmartin","repositoryName":"carlosdominguezmartin.github.io","branch":"master"},"site":{"title":"AndroidDev","url":"https://carlosdominguezmartin.github.io"},"socialnetwork":{},"theme":{"name":"Casper","url":"//carlosdominguezmartin.github.io/themes/Casper"}}
