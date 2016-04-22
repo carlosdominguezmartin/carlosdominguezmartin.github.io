@@ -34,3 +34,26 @@ Solo hemos cambiado una de las cadenas almacenadas incluyendo un espacio en blan
 
 Para los casos sencillos es útil conocer el primer método, pero si nos encontramos con situaciones más complejas es recomendable acudir al dialogo de reemplazar. Ctrl+R (Edit -> Find -> Replace...).
 
+image::001_02.png[]
+
+Lo que vamos a hacer es realizar una búsqueda por expresión regular, para lo que deberemos marcar la casilla que se indica en la imagen anterior.
+
+En el recuadro de búsqueda vamos a introducir una expresión regular que nos agrupe por bloques las distintas partes de la línea que queremos editar:
+
+ (insert into tabla_de_prueba \(texto1, )(texto2)(, texto3\) values \("[^"]*", )(")([^"]*)(")([^\)]*\))
+
+TIP: Ni soy experto en expresiones regulares ni pretendo convertir esta entrada en una guía de expresiones regulares, pero para destacaré lo más importante de la expresión anterior, los paréntesis, que nos permite agrupar en bloques las distintas zonas de coincidencia para poder referenciarlas después con $n siendo n el número de bloque en la expresión.
+Por ejemplo, $1 sería "insert into tabla_de_prueba (texto1, ".
+
+En el segundo recuadro introducimos el valor por el que queremos reemplazar:
+
+ $1numero2$3$5$7
+
+Una vez rellenos ambos campos, si existe coincidencia, se nos previsualizará la modificación en el editor y las líneas que cumplen la expresión regular:
+
+image::001_03.png[]
+
+Ahora basta con pulsar sobre Replace all y la sustitución será inmediata.
+
+TIP: Aunque es mucho más complejo de conseguir con reemplazar y regex, cuando estamos trabajando con varios cientos de líneas al mismo tiempo la selección múltiple se hace inviable, llegando a tardar más de un minuto simplemente en mover el cursor (i7 con 12Gb de RAM y disco duro SSD).
+
