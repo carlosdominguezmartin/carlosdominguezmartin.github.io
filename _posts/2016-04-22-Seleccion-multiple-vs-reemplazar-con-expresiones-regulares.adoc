@@ -56,4 +56,3 @@ image::001_04.gif[]
 Ahora basta con pulsar sobre Replace all y la sustitución será inmediata.
 
 TIP: Aunque es mucho más complejo de conseguir con reemplazar y regex, cuando estamos trabajando con varios cientos de líneas al mismo tiempo la selección múltiple se hace inviable, llegando a tardar más de un minuto simplemente en mover el cursor (i7 con 12Gb de RAM y disco duro SSD).
-
