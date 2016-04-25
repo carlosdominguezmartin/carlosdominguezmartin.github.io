@@ -3,7 +3,7 @@
 
 Probablemente ya conozcáis Butter Knife. Si no es así, os recomiendo que le echéis un vistazo porque os será muy útil en vuestros proyectos.
 
-Butter Knife nos permite mejorar en gran medida nuestro código. No voy a explicar cómo funciona ni cómo incluirlo en nuestros proyectos ya que hay decentas de artículos donde se puede leer sobre esto. Quizás uno de los mejores sitios para conocer todo su potencial sea en una entrada reciente de Paresh Mayani (http://engineering.letsnurture.com/android-get-butter-knife/[Get more out of Butter Knife]).
+Butter Knife nos permite mejorar en gran medida nuestro código. No voy a explicar cómo funciona ni cómo incluirlo en nuestros proyectos ya que hay decenas de artículos donde se puede leer sobre esto. Quizás uno de los mejores sitios para conocer todo su potencial sea en una entrada reciente de Paresh Mayani (http://engineering.letsnurture.com/android-get-butter-knife/[Get more out of Butter Knife]).
 
 Lo que voy a explicar aquí es cómo usar Butter Knife en combinación con diálogos.
 
