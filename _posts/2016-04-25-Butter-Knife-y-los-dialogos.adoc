@@ -1,0 +1,96 @@
+= Butter Knife y los diálogos
+:hp-tags: butterknife, dialog
+
+Probablemente ya conozcáis Butter Knife. Si no es así, os recomiendo que le echéis un vistazo porque os será muy útil en vuestros proyectos.
+
+Butter Knife nos permite mejorar en gran medida nuestro código. No voy a explicar cómo funciona ni cómo incluirlo en nuestros proyectos ya que hay decentas de artículos donde se puede leer sobre esto. Quizás uno de los mejores sitios para conocer todo su potencial sea en una entrada reciente de Paresh Mayani (http://engineering.letsnurture.com/android-get-butter-knife/[Get more out of Butter Knife]).
+
+Lo que voy a explicar aquí es cómo usar Butter Knife en combinación con diálogos.
+
+Hace unos meses me encontré con un proyecto que tenía distintas actividades encargadas de recoger información proporcionada por el usuario. Las actividades agrupaban la recolección de datos en distintos diálogos para estructurar el proceso.
+
+Podemos pensar por ejemplo en una aplicación dirigida a evaluar el estado de un vehículo. Una vez que se eligiese el tipo de vehículo necesitaremos información de las ruedas, el motor, etc. para lo que mostraríamos un diálogo por cada bloque.
+
+.Estructura básica de la actividad
+----
+ @Bind(R.id.send) Button sendButton;
+ @Bind(R.id.progress) TextView progress;
+ 
+ public class evaluateCar extends Activity {
+ 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ButterKnife.bind(this);
+    }
+    
+    @onClick(R.id.engine)
+    public void engineData() {
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_engine);
+        dialog.show();
+    }
+    
+    @onClick(R.id.wheel)
+    public void wheelData() {
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_wheel);
+        dialog.show();
+    }
+    
+ }
+----
+
+Lo único que hacemos es obtener dos vistas de la actividad (un botón para enviar y otro para mostrar el progreso) y asignar dos métodos, engineData al botón del motor y wheelData al de las ruedas.
+
+Dentro de ambos diálogos hay distintas vistas (EditText, CheckBox, etc.) que el usuario deberá rellenar y a los que necesitaremos poder acceder. Para conseguirlo con Butter Knife una de las posibilidades es crear objetos dentro de nuestra clase que contengan las variables en las que enlazaremos las vistas. Tras estos bastaría con hacer bind pasando la vista y una instancia de la clase que hemos creado.
+
+.Estructura con enlazado de diálogos
+----
+ @Bind(R.id.send) Button sendButton;
+ @Bind(R.id.progress) TextView progress;
+ 
+ private class EngineDialog {
+     @Bind(R.id.engineValue1) EditText value1;
+     ...
+     @Bind(R.id.engineValueN) EditText valueN;
+ }
+ private EngineDialog engineDialog = new EngineDialog();
+ 
+ private class WheelDialog {
+     @Bind(R.id.wheelValue1) EditText value1;
+     ...
+     @Bind(R.id.wheelValueN) EditText valueN;
+ }
+ private EngineDialog wheelDialog = new WheelDialog();
+ 
+ public class evaluateCar extends Activity {
+ 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ButterKnife.bind(this);
+    }
+    
+    @onClick(R.id.engine)
+    public void engineData() {
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_engine);
+        dialog.show();
+        ButterKnife.bind(engineDialog, dialog.getWindow().getDecorView());
+        engineDialog.value1.setText("Value 1");
+    }
+    
+    @onClick(R.id.wheel)
+    public void wheelData() {
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_wheel);
+        dialog.show();
+        ButterKnife.bind(wheelDialog, dialog.getWindow().getDecorView());
+        wheelDialog.value1.setText("Value 1");
+    }
+    
+ }
+----
+
+De esta forma conseguimos además estructurar la información y poder acceder a ella mucho más intuitivamente.
